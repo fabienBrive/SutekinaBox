@@ -32,9 +32,30 @@ class User
     private $email;
 
     /**
+     * @ORM\Column(type="string", length=64)
+     */
+    private $password;
+
+    /**
      * @ORM\Column(type="array")
      */
     private $roles = [];
+
+    /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password): void
+    {
+        $this->password = $password;
+    }
 
     /**
      * @return mixed
