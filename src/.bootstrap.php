@@ -19,7 +19,7 @@ if ('prod' !== $_SERVER['APP_ENV']) {
     if (method_exists($dotenv, 'loadEnv')) {
         $dotenv->loadEnv($path);
     } else {
-        // fallback code in case your Dotenv component is not 4.2 or higher (when loadEnv() was added)
+        // fallback code in case your Dotenv components is not 4.2 or higher (when loadEnv() was added)
 
         if (file_exists($path) || !file_exists($p = "$path.dist")) {
             $dotenv->load($path);
