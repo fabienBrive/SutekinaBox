@@ -4,11 +4,17 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BoxRepository")
  */
 class Box
 {
+    /**
+     * @ORM\Column(type="array")
+     */
+    private $currentPlace = [];
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -32,14 +38,10 @@ class Box
     private $budget;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
-    private $isValidate;
-
-    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Product", mappedBy="box")
+     * @ORM\Column(type="array")
      */
-    private $products;
+    private $products = [];
 
     /**
      * @return mixed
@@ -52,7 +54,7 @@ class Box
     /**
      * @param mixed $products
      */
-    public function setProducts($products): void
+    public function setProducts(array $products): void
     {
         $this->products = $products;
     }
@@ -74,12 +76,12 @@ class Box
         return $this;
     }
 
-    public function getCreationDate(): ?\DateTimeInterface
+    public function getCreationDate(): \DateTime
     {
         return $this->creationDate;
     }
 
-    public function setCreationDate(\DateTimeInterface $creationDate): self
+    public function setCreationDate(\DateTime $creationDate): self
     {
         $this->creationDate = $creationDate;
 
@@ -98,15 +100,25 @@ class Box
         return $this;
     }
 
-    public function getIsValidate(): ?bool
+    public function __construct()
     {
-        return $this->isValidate;
+        $this->creationDate = new \DateTime();
     }
 
-    public function setIsValidate(bool $isValidate): self
+    /**
+     * @return mixed
+     */
+    public function getCurrentPlace()
     {
-        $this->isValidate = $isValidate;
-
-        return $this;
+        return $this->currentPlace;
     }
+
+    /**
+     * @param mixed $currentPlace
+     */
+    public function setCurrentPlace($currentPlace): void
+    {
+        $this->currentPlace = $currentPlace;
+    }
+
 }

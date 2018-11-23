@@ -1,0 +1,27 @@
+framework:
+    workflows:
+        sutekina_box:
+            type: 'workflow'
+            audit_trail:
+                enabled: true
+            marking_store:
+                type: 'single_state'
+                arguments:
+                    - 'currentPlace'
+            supports:
+                - App\Entity\Box
+            initial_place: created
+            places:
+                - created
+                - complete
+                - send
+            transitions:
+                add_product:
+                    from: created
+                    to:   complete
+                is_validate:
+                    from: complete
+                    to:   send
+                is_not_valid:
+                    from: complete
+                    to:   created

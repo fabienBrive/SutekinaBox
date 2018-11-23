@@ -15,11 +15,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class IndexController extends AbstractController
 {
     /**
-     * Developpement function fir first vue return
+     * Developpement function for first vue return
      * @Route("/", name="index_index")
      */
     public function index()
     {
         return $this->render('index/index.html.twig');
     }
+
+
+
 }

@@ -6,7 +6,7 @@
         <a class="navbar-brand" href="{{ path('index_index') }}">SutekinaBox</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Box Creation</a>
+                <a class="nav-link" href="{{ path('box_create') }}">Box Creation</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('product_index') }}">Products</a>
@@ -19,11 +19,7 @@
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-<<<<<<< HEAD
-            <a class="btn btn-outline-info my-2 my-sm-0" type="button" href="">Sign In</a>
-=======
-            <a class="btn btn-outline-secondary  my-2 my-sm-0" href="{{ path('membre_inscription') }}" role="button">Sign In</a>
->>>>>>> 1241d81c81c6f19bba1d3cc61e0d98740e1567c1
+            <a class="btn btn-outline-info my-2 my-sm-0" type="button" href="{{ path('user_new') }}">Sign In</a>
         </form>
     </div>
 </nav>

@@ -49,7 +49,7 @@ class Product
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Box", inversedBy="products")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $box;
 
