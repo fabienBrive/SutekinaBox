@@ -2,7 +2,14 @@
 
 
 {% block content %}
-    <h1></h1>
+
+    {% for message in app.flashes('notice') %}
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            {{ message }}
+        </div>
+    {% endfor %}
+
     <div class="jumbotron">
         <h1 class="display-4">Welcome!</h1>
         <p class="lead">Welcome to the SutekinaBox Administration App, Please login to access the creative process of our beautiful Box.</p>

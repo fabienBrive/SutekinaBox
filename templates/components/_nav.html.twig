@@ -3,20 +3,23 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="#">SutekinaBox</a>
+        <a class="navbar-brand" href="{{ path('index_index') }}">SutekinaBox</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
                 <a class="nav-link" href="#">Box Creation <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Products</a>
+                <a class="nav-link" href="{{ path('product_index') }}">Products</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#">Suppliers</a>
+                <a class="nav-link" href="{{ path('user_index') }}">App Users</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="{{ path('supplier_index') }}">Suppliers</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Sign In</button>
+            <a class="btn btn-outline-info my-2 my-sm-0" type="button" href="">Sign In</a>
         </form>
     </div>
 </nav>

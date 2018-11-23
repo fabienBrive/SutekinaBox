@@ -1,14 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Etudiant
- * Date: 21/11/2018
- * Time: 17:09
- */
 
-namespace App\User;
+namespace App\Form;
 
-
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -19,7 +13,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class UserType extends AbstractType
 {
-    # User Inscription From
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -55,6 +48,8 @@ class UserType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults([]);
+        $resolver->setDefaults([
+            'data_class' => User::class,
+        ]);
     }
 }

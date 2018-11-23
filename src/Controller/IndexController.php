@@ -1,22 +1,22 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Etudiant
- * Date: 21/11/2018
- * Time: 14:11
+ * User: FabulousPC
+ * Date: 23/11/2018
+ * Time: 10:25
  */
 
-namespace App\Controller\SutekinaBox;
+namespace App\Controller;
 
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class IndexController extends Controller
+class IndexController extends AbstractController
 {
     /**
      * Developpement function fir first vue return
-     * @Route({}, name="index_index")
+     * @Route("/", name="index_index")
      */
     public function index()
     {
